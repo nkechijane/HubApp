@@ -1,0 +1,115 @@
+﻿@using HubApp.Models.DTO;
+@{
+    var result = ViewData["result"] as ResponseDTO;
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Hub Finder</h1>
+    <p>
+        Please select a State and click on submit
+    </p>
+    <form action="" method="post">
+        <div class="dropdown">
+            <div class="dropbtn" onclick="myFunction()">
+                States
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Abia" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Adamawa" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Akwa Ibom" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Anambra" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Bauchi" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Bayelsa" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Benue" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Borno" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Cross River" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="about" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Delta" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Edo" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Ekiti" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Enugu" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Gombe" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Imo" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Jigawa" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Kaduna" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Kano" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Katsina" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Kebbi" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Kogi" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Kwara" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Lagos" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Nasarawa" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Niger" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Ogun" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Ondo" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Osun" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Oyo" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Plateau" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Rivers" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Sokoto" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Taraba" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Yobe" /><br />
+                <input type="submit" name="State" class="dropbtnbtn" readonly value="Zamfara" /><br />
+            </div>
+        </div>
+    </form>
+    <br /><br /><br />
+    @if (result != null)
+    {
+        @if (result.data != null)
+        {
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Address</th>
+                    <th>Website</th>
+                    <th>Tags</th>
+                </tr>
+                @foreach (var item in result.data)
+                {
+                    <tr>
+                        <td>@item.name</td>
+                        <td>@item.state</td>
+                        <td>@item.address</td>
+                        <td>@item.website</td>
+                        <td>@item.tags</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>@result.message</p>
+        }
+    }
+
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+</div>
+
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("input");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].value || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>

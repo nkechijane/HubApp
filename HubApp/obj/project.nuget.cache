@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "t51cNKLLFermm1HRRyXGRVPW7Qx91ayitJEy3V01kKmAG7u6daDnCUft6mT12k/Ti7hJndQKr6ZEbZ2WITVWiQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\HubApp\\HubApp\\HubApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
