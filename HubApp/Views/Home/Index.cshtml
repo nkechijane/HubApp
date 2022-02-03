@@ -7,7 +7,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to Hub Finder</h1>
     <p>
-        Please select a State and click on submit
+        Please select a State
     </p>
     <form action="" method="post">
         <div class="dropdown">
@@ -16,7 +16,7 @@
                 <i class="fa fa-caret-down"></i>
             </div>
             <div id="myDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                @*<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">*@
                 <input type="submit" name="State" class="dropbtnbtn" readonly value="Abia" /><br />
                 <input type="submit" name="State" class="dropbtnbtn" readonly value="Adamawa" /><br />
                 <input type="submit" name="State" class="dropbtnbtn" readonly value="Akwa Ibom" /><br />
@@ -59,7 +59,7 @@
     <br /><br /><br />
     @if (result != null)
     {
-        @if (result.data != null)
+        @if (result.Data != null)
         {
             <table>
                 <tr>
@@ -69,21 +69,21 @@
                     <th>Website</th>
                     <th>Tags</th>
                 </tr>
-                @foreach (var item in result.data)
+                @foreach (var item in result.Data)
                 {
                     <tr>
-                        <td>@item.name</td>
-                        <td>@item.state</td>
-                        <td>@item.address</td>
-                        <td>@item.website</td>
-                        <td>@item.tags</td>
+                        <td>@item.Name</td>
+                        <td>@item.State</td>
+                        <td>@item.Address</td>
+                        <td>@item.Website</td>
+                        <td>@item.Tags</td>
                     </tr>
                 }
             </table>
         }
         else
         {
-            <p>@result.message</p>
+            <p>@result.Message</p>
         }
     }
 

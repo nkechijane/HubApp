@@ -7,20 +7,20 @@ namespace HubApp.Models.DTO
 {
     public class ResponseDTO
     {
-        public int code { get; set; }
-        public string status { get; set; }
-        public string message { get; set; }
-        public Datum[] data { get; set; }
+        public int Code { get; set; }
+        public string Status { get; set; }
+        public string Message { get; set; }
+        public Datum[] Data { get; set; }
     }
 
     public class Datum
     {
-        public string name { get; set; }
-        public string state { get; set; }
-        public string address { get; set; }
-        public string website { get; set; }
-        public string tags { get; set; }
-        public object image { get; set; }
+        public string Name { get; set; }
+        public string State { get; set; }
+        public string Address { get; set; }
+        public string Website { get; set; }
+        public string Tags { get; set; }
+        public object Image { get; set; }
     }
 
 
