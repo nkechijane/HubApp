@@ -1,2 +1,2 @@
 # HubApp
-A simple app for finding hubs in a Nigeria States.
+A simple app for finding hubs in Nigeria States.
